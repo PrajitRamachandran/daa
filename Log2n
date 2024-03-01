@@ -1,0 +1,11 @@
+def log2_recursive(n):
+    if n <= 0:
+        raise ValueError("Input must be greater than 0")
+    elif n == 1:
+        return 0
+    else:
+        return 1 + log2_recursive(n / 2)
+
+# Example usage:
+result = log2_recursive(16)
+print(result)
