@@ -26,3 +26,6 @@ graph = {
     'E': []
 }
 print(topological_sort(graph))
+
+Output:
+['A', 'C', 'B', 'D', 'E']
