@@ -34,3 +34,13 @@ distances = dijkstra(graph, start_node)
 print("Shortest distances from node", start_node, "to:")
 for node, distance in distances.items():
     print(node, ":", distance)
+
+
+output:
+shortest distance from node A
+A:0
+B:5
+c:3
+D:6
+E:5
+F:8
