@@ -45,3 +45,24 @@ root = build_huffman_tree(text)
 codes = encode_huffman_tree(root)
 for char, code in codes.items():
     print(f"'{char}': {code}")
+output:
+'.': 00000
+'u': 00001
+'c': 0001
+'i': 001
+'a': 010
+'n': 0110
+'m': 0111
+'e': 10000
+'t': 10001
+'s': 1001
+' ': 101
+'o': 1100
+'r': 11010
+'g': 11011
+'f': 11100
+'h': 111010
+'l': 111011
+'d': 11110
+'p': 111110
+'H': 111111
