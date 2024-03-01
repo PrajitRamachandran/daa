@@ -45,3 +45,15 @@ def solve_n_queens(N):
 # Example usage:
 N = 8
 solve_n_queens(N)
+
+output:
+One of the possible solutions:
+
+1 0 0 0 0 0 0 0 
+0 0 0 0 1 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 1 0 0 
+0 0 1 0 0 0 0 0 
+0 0 0 0 0 0 1 0 
+0 1 0 0 0 0 0 0 
+0 0 0 1 0 0 0 0 
