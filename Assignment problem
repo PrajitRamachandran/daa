@@ -15,3 +15,10 @@ print("Optimal assignment:")
 for row, col in zip(row_indices, col_indices):
     print(f"Worker {row+1} is assigned to Task {col+1}")
 print("Total cost:", total_cost)
+
+output:
+Optimal assignment:
+Worker 1 is assigned to Task 2
+Worker 2 is assigned to Task 1
+Worker 3 is assigned to Task 3
+Total cost: 6
