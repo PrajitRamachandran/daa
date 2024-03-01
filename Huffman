@@ -1,0 +1,47 @@
+import heapq
+from collections import defaultdict, Counter
+
+class Node:
+    def __init__(self, char, freq):
+        self.char = char
+        self.freq = freq
+        self.left = None
+        self.right = None
+
+    def __lt__(self, other):
+        return self.freq < other.freq
+
+def build_huffman_tree(text):
+    frequency = Counter(text)
+    priority_queue = [Node(char, freq) for char, freq in frequency.items()]
+    heapq.heapify(priority_queue)
+
+    while len(priority_queue) > 1:
+        left = heapq.heappop(priority_queue)
+        right = heapq.heappop(priority_queue)
+        merged = Node(None, left.freq + right.freq)
+        merged.left = left
+        merged.right = right
+        heapq.heappush(priority_queue, merged)
+
+    return priority_queue[0]
+
+def encode_huffman_tree(root):
+    codes = {}
+
+    def encode(node, code):
+        if node:
+            if node.char:
+                codes[node.char] = code
+            encode(node.left, code + '0')
+            encode(node.right, code + '1')
+
+    encode(root, '')
+    return codes
+
+# Example usage:
+text = "Huffman coding is a data compression algorithm."
+root = build_huffman_tree(text)
+codes = encode_huffman_tree(root)
+for char, code in codes.items():
+    print(f"'{char}': {code}")
