@@ -1,0 +1,17 @@
+import numpy as np
+from scipy.optimize import linear_sum_assignment
+
+# Cost matrix
+cost_matrix = np.array([[4, 2, 8],
+                        [3, 6, 7],
+                        [5, 8, 1]])
+
+# Solve the assignment problem
+row_indices, col_indices = linear_sum_assignment(cost_matrix)
+
+# Print the optimal assignment
+total_cost = cost_matrix[row_indices, col_indices].sum()
+print("Optimal assignment:")
+for row, col in zip(row_indices, col_indices):
+    print(f"Worker {row+1} is assigned to Task {col+1}")
+print("Total cost:", total_cost)
