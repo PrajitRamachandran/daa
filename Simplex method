@@ -16,3 +16,7 @@ res = linprog(c, A_ub=A, b_ub=b, method='highs')
 # Print the result
 print('Optimal value:', res.fun)
 print('Optimal solution:', res.x)
+
+output:
+Optimal value: -16.0
+Optimal solution: [0.5 5. ]
