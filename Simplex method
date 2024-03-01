@@ -1,0 +1,18 @@
+import numpy as np
+from scipy.optimize import linprog
+
+# Objective function coefficients
+c = np.array([-2, -3])
+
+# Coefficients of inequality constraints (left-hand side of inequalities)
+A = np.array([[1, 0], [0, 1], [2, 3]])
+
+# Right-hand side of inequality constraints
+b = np.array([4, 5, 16])
+
+# Solve the problem
+res = linprog(c, A_ub=A, b_ub=b, method='highs')
+
+# Print the result
+print('Optimal value:', res.fun)
+print('Optimal solution:', res.x)
